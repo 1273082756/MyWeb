@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+
+  </style>
+  <script>
+   function a(){
+	   //alert("菜单");
+	   var div=document.getElementById("aaa");
+		   if(div.style.display=="block"){
+			   div.style.display="none";
+		   }
+		   else{
+			   div.style.display="block";
+		   }
+   }
+
+  </script>
+ </head>
+ <body>
+ <article>
+  <a href="#" id="menu" onClick="a()">菜单</a><br>
+  <ul id="aaa">
+    <li><a href="#" id="one" onClick="a()">项目一</a></li>
+	<li>项目二</li>
+	<li>项目三</li>
+	<li>项目四</li>
+  </ul>
+  </article>
+ </body>
+</html>

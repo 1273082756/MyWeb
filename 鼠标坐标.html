@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>鼠标坐标 以及图片跟随移动</title>
+  <style>
+    #canvas{
+	 border:1px solid #ccc;
+	 width:300px;
+	 height:300px;
+	 overflow:hidden;
+  </style>
+  <script>
+    function get_x_y(ev,obj){
+	     var m_clientX=ev.clientX-obj.offsetLeft;
+         var m_clientY=ev.clientY-obj.offsetTop;
+		 document.getElementById("aaa").value="X: "+m_clientX+"  Y: "+m_clientY;
+         document.getElementById("photo").style.left=m_clientX+"px";
+		 document.getElementById("photo").style.top=m_clientY+"px";
+		 var xyid,xy2id;
+    }
+	function xy(){
+		 document.getElementById("photo2").width=document.getElementById("photo2").width-1;
+         document.getElementById("photo2").style.left=document.getElementById("photo2").style.left+"1px";
+          document.getElementById("photo2").height=140;
+		 xyid=window.setTimeout("xy()",10);
+		 if(document.getElementById("photo2").width==0){
+			 window.clearTimeout(xyid);
+			 xy2();
+		 }
+	}
+	function xy2(){
+		 
+		document.getElementById("photo2").width=document.getElementById("photo2").width+1;
+		 document.getElementById("photo2").style.left=document.getElementById("photo2").style.left-(1+"px");
+         document.getElementById("photo2").height=140;
+		 xy2id=window.setTimeout("xy2()",10);
+		if(document.getElementById("photo2").width>=140){
+			 window.clearTimeout(xy2id);
+			 xy();
+		 }
+	}
+  </script>
+ </head>
+ <body>
+ <center><input type="text" id="aaa" style="width:500px"></center>
+ <div id="tips"></div>
+  <img src="D:\timg.jpg" id="photo" width="10%"  style="position:absolute">
+  <div id="canvas"onmousemove="get_x_y(event,this)"></div><br>
+  <img src="D:\timg.jpg" id="photo2" width="10%" style="position:absolute">
+  <center><input id="aa"align="center" style="padding-right:40px" type="button"value="按钮" onClick="xy()"></center>
+ </body>
+</html>

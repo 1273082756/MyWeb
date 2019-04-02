@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Char Picture</title>
+    <style>
+        #show{
+            color: gray;
+            font-family: Courier new, Monaco, monospace;
+            font-size: 12px;
+            line-height: 8px;
+        }
+    </style>
+    <script src="res/pic_to_chars.js"></script>
+</head>
+<body>
+<input type="file" id="file">
+<button type="button" style="width:100px" onclick="showImage()">Set Up</button>
+<img src="" style="width: 100px"/>
+<pre id="show"></pre>
+<script>
+    var map=getCharsMap(),
+	    show=document.getElementById("show"),
+        img=document.getElementsByTagName("img")[0],
+        canvas = document.createElement("canvas");
+    function showImage(){
+        var file = document.getElementById('file').files[0],
+                ctx = canvas.getContext('2d'),
+                url = URL.createObjectURL(file);
+        if(!file){
+            alert("请先选择文件");
+        }
+        img.src = url;
+        img.onload=function(){
+            canvas.width=img.naturalWidth;
+            canvas.height=img.naturalHeight;
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            show.innerText=toChars(ctx,canvas.width,canvas.height,100);
+            console.log(show.innerText);
+        }
+    }
+</script>
+</body>
+</html>

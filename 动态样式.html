@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>动态样式</title>
+  <style>
+  #div1{
+      width:100px;
+	  height:100px;
+	  background-color:green;
+	  }
+   </style>
+   <script>
+   function changeCSS(){
+	   var ocssStyle=document.styleSheets[0];
+	   var ocssRules=document.styleSheets[0].rules[0];
+	   ocssRules.style.backgroundColor="yellow";
+	   ocssRules.style.width="300px";
+	   ocssRules.style.height="150px";
+   }
+
+   </script>
+ </head>
+ <body>
+    <div id="div1">变颜色</div>
+	<a href="#"onClick="changeCSS()">改变颜色</a>
+  
+ </body>
+</html>

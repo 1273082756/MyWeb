@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+   <script>
+   var txt="             文字            ";
+   var interval=50;
+   var seq=0;
+   function LenScroll(){
+	   document.getElementById("lenText").value=txt.substring(seq,txt.length)+" "+txt;
+	   seq++;
+	   if(seq>txt.length)
+	   seq=0;
+	   window.setTimeout("LenScroll()",interval)
+   }
+   </script>
+   <style>
+   body{
+      text-align:center;
+	 }
+   input{
+      background:transparent;
+	  border:none;
+	  color:#FF0004;
+	  font-size:45px;
+	  font-weight:bold;
+	  font-family:SimHei;
+	 }
+    </style>
+
+   </style>
+ </head>
+ <body onLoad="LenScroll()">
+  <form id="myForm">
+    <center><input type="text" id="lenText"></center>
+
+  </form>
+ </body>
+</html>

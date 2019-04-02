@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>改变内容</title>
+  <script>
+  function changeTxt(){
+	  var aa=document.getElementById("aa");
+	  var bb=document.getElementById("bb");
+	  var cc=document.getElementById("button");
+	  var temp="<br><style>#txt{color:#00FFFF;font-size:72px;}</style>"+aa.innerHTML;
+	  if(bb.innerHTML!=temp){
+		  bb.innerHTML=temp;
+		  cc.value="变回来!";
+	  }
+	  else{
+		  bb.innerHTML=aa.innerHTML;
+		  cc.value="改变!";
+	  }
+  }
+  </script>
+ </head>
+ <body>
+  <div id="aa">
+     <div id="txt">
+	 hello world!   hia hia hia
+	 </div>
+  </div>
+  <div id="bb">
+  </div>
+  <input id="button" type="button" onClick="changeTxt()"value="改变!">
+ </body>
+</html>

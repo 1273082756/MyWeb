@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<script>
+function test1(){
+    var str="test"+
+    "1";
+    var t = document.getElementById("text1").value;
+    var res=t.includes(str);
+    if(res){
+        alert("字符串: "+t+"存在");
+    }else{
+        alert("字符串: "+t+"不存在");
+    }
+}
+function test2(){
+    var str="test2";
+    var t = document.getElementById("text2").value;
+    var res=t.startsWith(str);
+    alert(res);
+}
+function test3(){
+    var str="test3";
+    var t = document.getElementById("text3").value;
+    var res=t.endsWith(str);
+    alert(res);
+}
+function test4(){
+    alert('x'.padStart(7,'abcdefg'));
+}
+</script>
+<body>
+    <input id="text1" type="text">
+    <input type="button" onclick="test1()" value="button1"><br><br>
+    <input id="text2" type="text">
+    <input type="button" onclick="test2()" value="button2"><br><br>
+    <input id="text3" type="text">
+    <input type="button" onclick="test3()" value="button3"><br><br>    
+    <input type="button" onclick="test4()" value="button4">
+</body>
+</html>
