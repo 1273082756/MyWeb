@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func(){
+            return this;
+        }
+        console.log(Object());
+        var partten="你空(.*?)爱上";
+        var str="卡的加分你空间安费诺奥斯卡大就爱上你科技风那是科技风撒可富那是发错了";
+        document.write("<h3>"+str.match(partten)[1]+"</h3>")
+    </script>
+</body>
+</html>
