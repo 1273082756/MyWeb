@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>test</title>
+ </head>
+ <script>
+ 	function work(){
+		var array;
+		var temp=document.getElementById("text").value;
+		var sum=1;
+		document.write('<h1>结果为:</h1>');
+		for(var i=0;i<6;i++){
+			if(temp==0){
+				for(var j=0;j<6;j++){
+					document.write("<h4>"+j+"次方: 0</h4>");
+				}
+				break;
+			}else if(temp==1){
+				for(var j=0;j<6;j++){
+					document.write("<h4>"+j+"次方: 1</h4>");
+				}
+				break;
+			}else{
+				sum*=temp;
+				document.write("<h4>"+i+"次方:"+sum+"</h4>");
+			}
+		}
+	}
+ </script>
+ <body>
+ 
+  <input id="text" type="text"><br>
+  <input id="but" type="button" value="计算" onclick="work()">
+
+ </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style>
+    #c1{
+        background-color: gray;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="c1"></canvas>
+    <canvas id="c2"></canvas>
+    <canvas id="c3"></canvas>
+    <canvas id="c4"></canvas>
+
+    <script>
+        var canvas = document.getElementById('c1');
+        var ctx = canvas.getContext('2d');
+        function draw() {//定义绘制圆心的方法
+            CanvasRenderingContext2D.prototype.circle = function(x, y, raidus, color) {
+                this.beginPath();
+                this.arc(x, y, raidus, 0, Math.PI * 2, false); //x:坐标点x;y:坐标点y;raidus:圆半径;0:起点角度;Math.PI*2:终点角度;false:非逆时针
+                this.closePath();
+                this.fillStyle = color; // 填充颜色;
+                this.fill(); //对图形进行填充
+            }
+        }
+        function drawline(id,x1,y1,x2,y2){//画直线
+            canvas = document.getElementById(id);   
+            ctx = canvas.getContext("2d");   
+            ctx.beginPath();   
+            ctx.moveTo(x1,y1);   
+            ctx.lineTo(x2,y2);   
+            ctx.stroke();
+        }
+        function show() {
+            draw(); //调用定义好的绘制方法
+            ctx.circle(130, 60, 8, 'red'); //绘制圆心
+            ctx.circle(150, 60, 8, 'red'); //绘制圆心
+            ctx.circle(140, 50, 8, 'red'); //绘制圆心
+            ctx.circle(140, 70, 8, 'red'); //绘制圆心
+            
+            ctx.circle(140, 60, 10, 'yellow'); //绘制圆心
+            ctx.circle(134, 90, 5, 'green');
+            ctx.circle(146, 90, 5, 'green');
+            ctx.circle(140, 95, 5, 'green');
+            ctx.circle(129, 85, 5, 'green');
+            ctx.circle(151, 85, 5, 'green');
+            drawline('c1',140,78,140,120);
+        }
+        show();
+        console.log("working");
+    </script>
+    
+    
+</body>
+</html>
