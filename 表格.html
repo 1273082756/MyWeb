@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <style>
+       #bb{
+           border: 6px;
+           height：600px;
+           width: 300px;
+       }
+       #a{
+           border: none;
+           overflow: hidden;
+           height: 100%;
+           width:100%;
+       }
+   </style>
+</head>
+<body id="bb">
+        <fieldset>
+        <legend>
+            学生基本信息表
+        </legend>  
+    <table border="1" >
+        <tr>
+        <th colspan="1">姓名</th>
+        <th><input type="text" value="" id="a"></th>
+        </tr>
+        <tr>
+           <th>性别</th> 
+           <th><form action="" method="get">
+		   <input name="people" type="radio" value="man" >男
+           <input name="people" type="radio" value="women" >女
+           </form></th>
+           
+        </tr>
+        <tr>
+            <th>年龄</th>
+            <th>
+                <select  id="a" >
+					<option value="year">21以下</option>
+                    <option value="year">21-24</option>
+                    <option value="year">24-25</option>
+                    <option value="year">25-28</option>
+                    <option value="year">28-30</option>
+                    <option value="year">30以上</option>
+                  </select>
+                </th>
+            </tr>
+                <tr>
+                    <th>追星（可多选）</th>
+                    <th>
+                            <form action="" method="get" >
+                                    <select name="name " size="3" multiple="multiple">
+                                    <option value="people " selected >周星驰</option>
+                                    <option value="people" >邓超</option>
+                                    <option value="people" >许嵩</option>
+                                    <option value="people" >吴京</option>
+                                    <option value="people" >王宝强</option>
+									<option value="people" >刘有卓</option>
+									<option value="people" >菜虚困</option>
+                                  </select> </th>
+                </tr>
+                <tr>
+                    <th>出生日期</th>
+                    <th><input name="ad"type="date" value="2019-03-0-27" placeholder="出生日期" id="a"></input> </th>
+                </tr>
+                <tr>
+                        <th>邮箱地址</th>
+                        <th ><input type="email" value="" placeholder="wo986472617@qq.com" id="a" ></th>
+                    </tr>
+                    <tr>
+                            <th>喜欢颜色</th>
+                            <th ><input type="color">
+                        </tr>
+                        <tr>
+                                <th>平时爱好</th>
+                                <th><form action="" method="get">
+                                        <input name="play" type="checkbox" value="">打游戏
+                                        <input name="play" type="checkbox" value="">看书
+                                        <input name="play" type="checkbox" value="">听音乐
+                                    </form>
+                                    </th>
+                            </tr>
+                            <tr>
+                                    <th colspan="2" Align="center" >
+                                            <input type="submit" value="提交">
+                                            <input type="reset" value="重置">
+                                            </th>
+                                    
+                                </tr>
+                                </fieldset>
+    </table>    
+
+  
+</body>
+</html>

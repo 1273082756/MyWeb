@@ -13,12 +13,12 @@
     }
     .div1{
         height: 200px;
-        background-color:blue;
+        background-color:rgba(47, 189, 255, 0.541);
         color:white;
         font-size:50px;
         text-align: center;
         font-weight: 700;
-        margin: 50px auto;
+        
         line-height: 200px;
     }
     .div2{
@@ -37,27 +37,36 @@
 <body>
     <div id="ws1" class="div1"></div>
     <div class="div2">
-        k e y: <input class="text" id="text1"><br>
-        value:<input class="text" id="text2"><br>
+        <view style="font-size:30px; font-weight: 700;">k e y:</view> <input class="text" id="text1"><br>
+        <view style="font-size:30px; font-weight: 700;">value:</view><input class="text" id="text2"><br>
         <button class="bt1" onclick="bt1()">保存</button>
         <button class="bt1" onclick="bt2()">取出</button>
         <button class="bt1" onclick="bt3()">删除</button>
+    </div>
+    <div id="ws2" style="display:none;" class="div1">
+
     </div>
     <script>
         function save(key,value){
             localStorage[key]=value;
             if(localStorage[key] === value){
-                alert("保存成功!");
+                document.getElementById("ws2").style.display="block";
+                document.getElementById("ws2").innerHTML="保存成功"
+                document.getElementById("text1").value="";
                 document.getElementById("text2").value="";
+                setTimeout(function(){
+                    document.getElementById("ws2").style.display="none"; 
+                    }, 
+                2000);
             }else{
-                alert("保存失败!");
+                document.getElementById("ws1").innerHTML="保存失败";
             }
         }
         function get(key){
             document.getElementById("ws1").innerHTML=key+"：" + localStorage[key];
         }
         function del(key){
-            localStorage[key]="";
+            localStorage.removeItem(key)
             document.getElementById("ws1").innerHTML=key+"：" + localStorage[key];
 
         }

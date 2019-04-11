@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求和</title>
+    <style>
+        #outinput{
+            background-color: cadetblue;
+            color: white;
+            font-size: 30px;
+            line-height: 150px;
+            width: 200px;
+            height: 150px;
+            margin: 20px auto;
+        }
+        .div1{
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <input style="width:160px;" id="t1" type="text">
+        <button onclick="add();out()">加</button>
+        <button onclick="arr()">数组</button>
+        <div id="outinput"></div>
+    </div>
+    <script>
+        var sum = 0;
+        var i = 0;
+        var array = {};
+        function add(){
+            var value =parseInt(document.getElementById('t1').value);
+            document.getElementById('t1').value="";
+            sum+=value;
+        }
+        function out(){
+            document.getElementById('outinput').innerHTML=sum;
+        }
+        function arr(){
+            num = document.getElementById("t1").value;
+            array[i]=num;
+            i++;
+            document.getElementById('outinput').innerHTML=array;
+            console.log(array);
+        }
+    </script>
+</body>
+</html>
