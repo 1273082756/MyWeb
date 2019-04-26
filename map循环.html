@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="test()">点击</button>
+    <p id="demo"></p>
+    <script>
+        function test() {
+            var arrmap = [1, 2, 3, 5, 9];
+            var demo = document.getElementById("demo");
+            demo.innerHTML = "";
+            //console.log(demo.innerHTML);
+            arrmap.map((item, index, arrmap) => {
+                demo.innerHTML = demo.innerHTML + "index[" + index + "]: " + item + "<br>";
+            })
+
+        }
+
+    </script>
+</body>
+
+</html>
